@@ -8,7 +8,7 @@ func multiply(expenses :openArray[int]; degrees :static[int]) :int =
       when level == 0:
         if tally.foldl(a + b) == 2020: return tally.foldl(a * b)
       else:
-        input[idx .. input.high].loop(level - 1)
+        input[idx + 1 .. input.high].loop(level - 1)
   expenses.loop(degrees - 1)
 
 var (line, expenses) = ("", newSeq[int]())
