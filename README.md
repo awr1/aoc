@@ -7,4 +7,8 @@ Answers to the AOC 2020 challenges are, of course, implemented in the [Nim Progr
 ```
 nim r day_01.nim < day_01_input.txt
 ```
+### [Day 02 - Password Philosophy](https://adventofcode.com/2020/day/2)
+```
+nim r day_02.nim < day_02_input.txt
+```
 
