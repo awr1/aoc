@@ -3,12 +3,7 @@ See the [Advent of Code Challenge](https://adventofcode.com/2020) and [Advent of
 
 Answers to the AOC 2020 challenges are, of course, implemented in the [Nim Programming Language](https://nim-lang.org/) 👑
 ## 2020
-### [Day 01 - Report Repair](https://adventofcode.com/2020/day/1)
-```
-nim r day_01.nim < day_01_input.txt
-```
-### [Day 02 - Password Philosophy](https://adventofcode.com/2020/day/2)
-```
-nim r day_02.nim < day_02_input.txt
-```
+1. [Report Repair](https://adventofcode.com/2020/day/1)
+2. [Password Philosophy](https://adventofcode.com/2020/day/2)
+2. [Toboggan Trajectory](https://adventofcode.com/2020/day/3)
 
