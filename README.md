@@ -8,5 +8,6 @@ nim r day_x.nim < day_x_input.txt
 ```
 1. [Report Repair](https://adventofcode.com/2020/day/1)
 2. [Password Philosophy](https://adventofcode.com/2020/day/2)
-2. [Toboggan Trajectory](https://adventofcode.com/2020/day/3)
+3. [Toboggan Trajectory](https://adventofcode.com/2020/day/3)
+4. [Passport Processing](https://adventofcode.com/2020/day/4)
 
