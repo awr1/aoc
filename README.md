@@ -11,4 +11,5 @@ nim r day_x.nim < day_x_input.txt
 3. [Toboggan Trajectory](https://adventofcode.com/2020/day/3)
 4. [Passport Processing](https://adventofcode.com/2020/day/4)
 5. [Binary Boarding](https://adventofcode.com/2020/day/5)
+6. [Custom Customs](https://adventofcode.com/2020/day/5)
 
