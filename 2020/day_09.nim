@@ -2,7 +2,7 @@ import strutils, sequtils, deques
 
 let nums = stdin.readAll.splitLines
   .filterIt(not it.isEmptyOrWhitespace)
-  .mapIt(it.parseInt)
+  .map(parseInt)
 
 proc invalid() :int =
   var dnums = nums.toDeque
