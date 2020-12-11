@@ -16,3 +16,4 @@ nim r day_x.nim < day_x_input.txt
 8. [Handheld Halting](https://adventofcode.com/2020/day/8)
 9. [Encoding Error](https://adventofcode.com/2020/day/9)
 10. [Adapter Array](https://adventofcode.com/2020/day/10)
+11. [Seating System](https://adventofcode.com/2020/day/11)
