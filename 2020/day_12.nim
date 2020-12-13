@@ -20,9 +20,8 @@ proc calculate(relative :bool) :int =
     if relative:
       let delta = newFace - face
       for i in 0 ..< delta.abs:
-        let old = way # see nim compiler issue #16331
-        way     = if delta < 0: (x : -old.y, y : old.x)
-                  else:         (x : old.y,  y : -old.x)
+        let switch = if delta < 0: (x : -1, y : +1) else: (x : +1, y : -1)
+        way        = (x : old.y * switch.y, y : old.x * switch.x)
     face = newFace
   for act in actions:
     case act.kind
