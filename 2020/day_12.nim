@@ -1,12 +1,10 @@
 import strutils, sequtils, math
 
 type ActionKind = enum N, E, S, W, L, R, F
-let
-  dirs = [N, E, S, W]
-  actions = stdin.readAll.splitLines
-    .filterIt(not it.isEmptyOrWhitespace)
-    .mapIt((kind  : parseEnum[ActionKind]($it[0]),
-            value : parseInt(it[1 .. ^1])))
+let (dirs, actions) = ([N, E, S, W], stdin.readAll.splitLines
+  .filterIt(not it.isEmptyOrWhitespace)
+  .mapIt((kind  : parseEnum[ActionKind]($it[0]),
+          value : parseInt(it[1 .. ^1]))))
 
 proc calculate(relative :bool) :int =
   var (face, pos, way) = (dirs.find(E), (x : 0, y : 0), (x : 10, y : 1))
@@ -26,7 +24,6 @@ proc calculate(relative :bool) :int =
         way     = if delta < 0: (x : -old.y, y : old.x)
                   else:         (x : old.y,  y : -old.x)
     face = newFace
-
   for act in actions:
     case act.kind
     of N .. W: (if relative: way.move(act.kind, act.value)
