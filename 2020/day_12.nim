@@ -1,6 +1,6 @@
 import strutils, sequtils, math
 
-type ActionKind = enum N, E, S, W, L, R, F
+type ActionKind     = enum N, E, S, W, L, R, F
 let (dirs, actions) = ([N, E, S, W], stdin.readAll.splitLines
   .filterIt(not it.isEmptyOrWhitespace)
   .mapIt((kind  : parseEnum[ActionKind]($it[0]),
