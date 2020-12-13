@@ -17,3 +17,4 @@ nim r day_x.nim < day_x_input.txt
 9. [Encoding Error](https://adventofcode.com/2020/day/9)
 10. [Adapter Array](https://adventofcode.com/2020/day/10)
 11. [Seating System](https://adventofcode.com/2020/day/11)
+12. [Rain Risk](https://adventofcode.com/2020/day/12)
