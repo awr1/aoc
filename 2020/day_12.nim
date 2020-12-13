@@ -10,13 +10,12 @@ let
 
 proc calculate(relative :bool) :int =
   var (face, pos, way) = (dirs.find(E), (x : 0, y : 0), (x : 10, y : 1))
-  proc move(vec :var tuple[x, y :int]; cardinal :range[N .. W]; by :int) =
+  proc move(vec :var pos.type; cardinal :range[N .. W]; by :int) =
     case cardinal
     of N: vec.y += by
     of E: vec.x += by
     of S: vec.y -= by
     of W: vec.x -= by
-
   proc turn(value :int) =
     var newFace = (face + value div 90) mod dirs.len
     if newFace < 0: newFace += dirs.len
