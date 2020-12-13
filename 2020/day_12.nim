@@ -8,11 +8,8 @@ let
     .mapIt((kind  : parseEnum[ActionKind]($it[0]),
             value : parseInt(it[1 .. ^1])))
 
-proc calculate(waypointed :bool) :int =
-  var
-    face                 = dirs.find(E)
-    (position, waypoint) = ((x : 0, y : 0), (x : 10, y : 1))
-
+proc calculate(relative :bool) :int =
+  var (face, pos, way) = (dirs.find(E), (x : 0, y : 0), (x : 10, y : 1))
   proc move(vec :var tuple[x, y :int]; cardinal :range[N .. W]; by :int) =
     case cardinal
     of N: vec.y += by
@@ -23,30 +20,23 @@ proc calculate(waypointed :bool) :int =
   proc turn(value :int) =
     var newFace = (face + value div 90) mod dirs.len
     if newFace < 0: newFace += dirs.len
-    if waypointed:
+    if relative:
       let delta = newFace - face
       for i in 0 ..< delta.abs:
-        let old  = waypoint # see nim compiler issue #16331
-        waypoint = if delta < 0: (x : -old.y, y : old.x)
-                   else:         (x : old.y,  y : -old.x)
+        let old  = way # see nim compiler issue #16331
+        way = if delta < 0: (x : -old.y, y : old.x)
+              else:         (x : old.y,  y : -old.x)
     face = newFace
 
-  for action in actions:
-    if waypointed:
-      case action.kind
-      of N .. W: waypoint.move(action.kind, action.value)
-      of F:
-        position = (x : position.x + (waypoint.x * action.value),
-                    y : position.y + (waypoint.y * action.value))
-      of L:      turn(-action.value)
-      of R:      turn(action.value)
-    else:
-      case action.kind
-      of N .. W: position.move(action.kind, action.value)
-      of F:      position.move(dirs[face],  action.value)
-      of L:      turn(-action.value)
-      of R:      turn(action.value)
-  position.x.abs + position.y.abs
+  for act in actions:
+    case act.kind
+    of N .. W: (if relative: way else: pos).move(act.kind, act.value)
+    of F:       if relative: pos = (x : pos.x + (way.x * act.value),
+                                    y : pos.y + (way.y * act.value))
+                else:        pos.move(dirs[face], act.value)
+    of L:       turn(-act.value)
+    of R:       turn(act.value)
+  pos.x.abs + pos.y.abs
 
-echo calculate(waypointed = false)
-echo calculate(waypointed = true)
+echo calculate(relative = false)
+echo calculate(relative = true)
