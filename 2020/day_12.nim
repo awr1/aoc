@@ -23,19 +23,20 @@ proc calculate(relative :bool) :int =
     if relative:
       let delta = newFace - face
       for i in 0 ..< delta.abs:
-        let old  = way # see nim compiler issue #16331
-        way = if delta < 0: (x : -old.y, y : old.x)
-              else:         (x : old.y,  y : -old.x)
+        let old = way # see nim compiler issue #16331
+        way     = if delta < 0: (x : -old.y, y : old.x)
+                  else:         (x : old.y,  y : -old.x)
     face = newFace
 
   for act in actions:
     case act.kind
-    of N .. W: (if relative: way else: pos).move(act.kind, act.value)
-    of F:       if relative: pos = (x : pos.x + (way.x * act.value),
+    of N .. W: (if relative: way.move(act.kind, act.value)
+                else:        pos.move(act.kind, act.value))
+    of F:      (if relative: pos = (x : pos.x + (way.x * act.value),
                                     y : pos.y + (way.y * act.value))
-                else:        pos.move(dirs[face], act.value)
-    of L:       turn(-act.value)
-    of R:       turn(act.value)
+                else:        pos.move(dirs[face], act.value))
+    of L:      turn(-act.value)
+    of R:      turn(act.value)
   pos.x.abs + pos.y.abs
 
 echo calculate(relative = false)
