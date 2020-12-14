@@ -27,7 +27,7 @@ while stdin.readLine(line) and line != "":
         let addrBit = mask.x.nthSetBit(maskBit + 1) - 1
         if counter.testBit(maskBit): adjustedAddr.setBit(addrBit)
         else:                        adjustedAddr.clearBit(addrBit)
-      mem2[bitOr(mask.overwrite, adjustedAddr)] = memValue
+      mem2[bitor(mask.overwrite, adjustedAddr)] = memValue
 
 echo toSeq(mem1.values).foldl(a + b)
 echo toSeq(mem2.values).foldl(a + b)
