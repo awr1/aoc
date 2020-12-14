@@ -18,3 +18,4 @@ nim r day_x.nim < day_x_input.txt
 10. [**(Solution)**](2020/day_10.nim) [Adapter Array](https://adventofcode.com/2020/day/10)
 11. [**(Solution)**](2020/day_11.nim) [Seating System](https://adventofcode.com/2020/day/11)
 12. [**(Solution)**](2020/day_12.nim) [Rain Risk](https://adventofcode.com/2020/day/12)
+13. [**(Solution)**](2020/day_13.nim) [Shuttle Search](https://adventofcode.com/2020/day/13)
