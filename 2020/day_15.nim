@@ -6,7 +6,8 @@ proc game(target :int) :int =
     # unoptimal) as the problem will never ask for one of the starting numbers
     # but for the sake of technical accuracy...
     if round - 1 in 0 .. starting.high:
-      result = starting[round - 1]; ages[result] = round
+      result       = starting[round - 1]
+      ages[result] = round
     else:
       if round - 1 == starting.high + 1: result = 0
       let prior    = ages[result]
