@@ -5,7 +5,7 @@ let starting = collect initHashSet:
     for yIdx, y in x:
       if y: {@[xIdx, yIdx]}
 
-proc conway(dims, cycles :int) :auto =
+proc conway(dims :int) :auto =
   let offsets = product(@[-1, 0, +1].repeat(dims))
   var field   = collect initHashSet:
     for i in starting: (var j = i; j.setLen(dims); {j})
@@ -13,7 +13,7 @@ proc conway(dims, cycles :int) :auto =
     collect initHashSet:
       for i in offsets:
         if not i.allIt(it == 0): {zip(p, i).mapIt(it[0] + it[1])}
-  for cycle in 1 .. cycles:
+  for cycle in 1 .. 6:
     var next = initHashSet[seq[int]]()
     for active in field:
       let neighbors = active.near
@@ -25,5 +25,5 @@ proc conway(dims, cycles :int) :auto =
   field.card
 
 # NOTE: This is not fast, just concise! Will take a minute or so
-echo conway(3, 6)
-echo conway(4, 6)
+echo conway(3)
+echo conway(4)
