@@ -21,4 +21,4 @@ nim r day_x.nim < day_x_input.txt
 13. [**(Solution)**](2020/day_13.nim) [Shuttle Search](https://adventofcode.com/2020/day/13)
 14. [**(Solution)**](2020/day_14.nim) [Docking Data](https://adventofcode.com/2020/day/14)
 15. [**(Solution)**](2020/day_15.nim) [Rambunctious Recitation](https://adventofcode.com/2020/day/15) (no file direction needed)
-15. [**(Solution)**](2020/day_16.nim) [Ticket Translation](https://adventofcode.com/2020/day/16)
+16. [**(Solution)**](2020/day_16.nim) [Ticket Translation](https://adventofcode.com/2020/day/16)
