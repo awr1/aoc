@@ -5,7 +5,7 @@ let starting = collect initHashSet:
     for yIdx, y in x:
       if y: {@[xIdx, yIdx]}
 
-proc conway(dims, cycles :static[int]) :auto =
+proc conway(dims, cycles :int) :auto =
   let offsets = product(@[-1, 0, +1].repeat(dims))
   var field   = collect initHashSet:
     for i in starting: (var j = i; j.setLen(dims); {j})
