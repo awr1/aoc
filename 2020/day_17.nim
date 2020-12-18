@@ -9,10 +9,10 @@ proc conway(dims :int) :auto =
   let offsets = product(@[-1, 0, +1].repeat(dims))
   var field   = collect initHashSet:
     for i in starting: (var j = i; j.setLen(dims); {j})
-  proc near(p :seq[int]) :auto =
+  proc near(point :seq[int]) :auto =
     collect initHashSet:
-      for i in offsets:
-        if not i.allIt(it == 0): {zip(p, i).mapIt(it[0] + it[1])}
+      for offset in offsets:
+        if not offset.allIt(it == 0): {zip(point, offset).mapIt(it[0] + it[1])}
   for cycle in 1 .. 6:
     var next = initHashSet[seq[int]]()
     for active in field:
