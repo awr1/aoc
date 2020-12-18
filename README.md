@@ -23,3 +23,4 @@ nim r day_x.nim < day_x_input.txt
 15. [**(Solution)**](2020/day_15.nim) [Rambunctious Recitation](https://adventofcode.com/2020/day/15) (no file direction needed)
 16. [**(Solution)**](2020/day_16.nim) [Ticket Translation](https://adventofcode.com/2020/day/16)
 17. [**(Solution)**](2020/day_17.nim) [Conway Cubes](https://adventofcode.com/2020/day/17)
+18. [**(Solution)**](2020/day_18.nim) [Operation Order](https://adventofcode.com/2020/day/18) (no file direction needed)
